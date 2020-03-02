@@ -1,10 +1,10 @@
 import React from "react";
-import History from './'
+// import History from './'
 import styled from 'styled-components';
 
 const Controls = styled.div`
 border: 1px solid blue;
-width:20%;
+width:100%;
 align-items: left;
 `;
 
@@ -13,6 +13,7 @@ border: 1px solid red;
 display:flex;
 justify-content: flex-end;
 height: 70vh; 
+width:15%;
 `
 
 const Game = props => {
@@ -20,10 +21,10 @@ const Game = props => {
         <Container>
             <Controls>
                 <h2 >Game Controls</h2>
-                <p><button>W</button> = North</p>
-                <p><button>A</button> = West</p>
-                <p><button>S</button> = South</p>
-                <p><button>D</button> = East</p>
+                <p><button>North</button></p>
+                <p><button>West</button></p>
+                <p><button>South</button></p>
+                <p><button>East</button></p>
             </Controls>
         </Container>
     )
