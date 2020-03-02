@@ -4,7 +4,7 @@ import login from "./components/login";
 import register from "./components/register";
 import { Route } from "react-router-dom";
 import Nav from "./components/navBar.js";
-import Game from "./components/game.js"
+import Game from "./components/controls"
 
 function App() {
   return (

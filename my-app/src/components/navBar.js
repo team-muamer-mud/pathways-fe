@@ -21,6 +21,9 @@ const NavTitle = styled.h3`
     padding-left: 1em;
     font-weight: bold;
     font-size: 2rem;
+    background: #D2691E;
+    color:yellow;
+    
 
 `;
 
