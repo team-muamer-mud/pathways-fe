@@ -1,12 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
-import Controls from './components/controls.js'
+import Controls from './controls.js'
 
-const Controls = styled.div`
-border: 1px solid green;
-width:20%;
-align-items: left;
-`;
 
 const Container = styled.div`
 border: 1px solid red;
