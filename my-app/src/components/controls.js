@@ -5,13 +5,13 @@ import North from '../assets/north.png'
 import West from '../assets/west.png'
 import South from '../assets/South.png'
 import East from '../assets/east.png'
-
+import Chat from './chat'
 
 const Controls = styled.div`
 border: 1px solid blue;
 width:20%;
 justify-content:center;
-height: 45vh; 
+height: 70vh; 
 background-color:white;
 display:flex;
 flex-direction: column;
@@ -22,10 +22,9 @@ align-items: center;
 const Container = styled.div`
 border: 1px solid red;
 display:flex;
-justify-content: flex-end;
 height: 70vh; 
 width:100%;
-background-color: black;
+background-color: #90EE90;
 flex-wrap:wrap;
 `
 const StyledImg = styled.img`
@@ -50,6 +49,7 @@ const Game = props => {
                 <StyledImg src={East} alt="East"></StyledImg>
                 <p><button>East</button></p>
             </Controls>
+            <Chat/>
         </Container>
     )
 }
