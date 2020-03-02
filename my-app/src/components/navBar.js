@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 const NavBar = styled.nav`
     display: flex;
     justify-content: space-between;
-    background: #fffff;
+    background: #ffff;
     position: sticky;
     top: 0;
     padding: 0.25em 1em 0.25em 1em;
@@ -32,7 +32,7 @@ const NavRight = styled.div`
 
 const StyledLink = styled(Link)`
     padding-right: 12px;
-    `
+`;
 
 const Nav = () => {
     return (
