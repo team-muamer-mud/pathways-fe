@@ -1,11 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import login from "./components/login";
+import register from "./components/register";
+import { Route } from "react-router-dom"
+import Nav from "./components/navBar.js"
 function App() {
   return (
     <div className="App">
-      <h1>Hello World, I am the gat man</h1>
+
+      <Nav/>
+      <Route path="/login" component={login} />
+      <Route path="/register" component={register} />
     </div>
   );
 }
