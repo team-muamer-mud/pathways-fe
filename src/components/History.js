@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { axiosWithAuth } from '../utils/axioswithAuth'
 
-const History = ({title, description}) => {
+
+const History = ({title, description, error}) => {
 
 
 
@@ -17,6 +17,7 @@ useEffect(() => {
                <div className="description">
                     <h3>{title}</h3>
                     <p>{description}</p>
+                    <p>{error}</p>
                </div>
           </div>
      )

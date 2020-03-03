@@ -35,6 +35,7 @@ body{
 }
 
 
+
 .controls-container{
   border:1px solid green;
 }
@@ -83,6 +84,20 @@ button:hover {
 	margin-bottom:0;
 	
 }
+
+.history-container{
+	display: flex;
+	flex-wrap: wrap;
+}
+.description{
+	padding-top:5%;
+	padding-left: 5%;
+	padding-right: 5%;
+	color: black;
+	display:flex;
+	flex-wrap: wrap;
+}
+
 .history-container{
 	display: flex;
 	flex-wrap: wrap;

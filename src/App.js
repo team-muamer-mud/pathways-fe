@@ -8,12 +8,16 @@ import {axiosWithAuth} from "./utils/axioswithAuth"
 function App() {
   const [description, setDescription] = useState("")
   const [title, setTitle] = useState("")
-  
+  const [error, setError] = useState("")
+
   const update = (move) => {
   
     axiosWithAuth()
     .post(`https://pathwaystodestiny.herokuapp.com/api/adv/move`, {direction: move})
             .then(res => {
+              if (res.data.error_msg !== "" || res.data.error_msg !== undefined){
+                setError(res.data.error_msg)
+              }
                 console.log(res, "RES");
                 axiosWithAuth()
                 .get(`https://pathwaystodestiny.herokuapp.com/api/adv/init`)
@@ -21,6 +25,8 @@ function App() {
                           console.log(res.data, "WORLDWORLD")
                           setDescription(res.data.description)
                           setTitle(res.data.title)
+                          // setError(res.data.error_msg)
+                          console.log(res.data.error_msg, "ERROR")
                      })
             })
             .catch(err => 
@@ -49,7 +55,8 @@ function App() {
         <div className="game-visual-container"></div>
         <History 
         title={title}
-        description={description}/>
+        description={description}
+        error={error}/>
       </div>
       <div className="lower-half-container">
         <div className="inventory-container"><p className="game-subtitle inventory-title">Inventory</p></div>
