@@ -96,6 +96,7 @@ button:hover {
 	color: black;
 	display:flex;
 	flex-wrap: wrap;
+	box-sizing: border-box;
 }
 
 .history-container{
