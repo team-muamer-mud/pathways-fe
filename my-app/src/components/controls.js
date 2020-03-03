@@ -41,7 +41,7 @@ const Game = props => {
     
     
     const update = (move) => {
-        console.log('update')
+        // console.log('update')
         
         
         axiosWithAuth()
