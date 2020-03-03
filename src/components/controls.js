@@ -36,23 +36,8 @@ import Chat from './chat'
 //   flex-wrap:wrap;
 // `;
 
-const Game = props => {
+const Game = ({update}) => {
 
-    
-    
-    const update = (move) => {
-        console.log('update')
-        
-        
-        axiosWithAuth()
-        .post(`https://pathwaystodestiny.herokuapp.com/api/adv/move`, {direction: move})
-                .then(res => {
-                    console.log(res, "RES");
-                })
-                .catch(err => 
-                    console.log(err.response))
-        
-      }
     
         // const handleChange = e => {
         //     setMove({

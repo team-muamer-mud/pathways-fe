@@ -1,11 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-const History = () => {
+
+const History = ({title, description, error}) => {
+
+
+
+useEffect(() => {
+
+})
+
+
 
      return(
           <div className="history-container">
                <p className="game-subtitle">Console</p>
-               <div></div>
+               <div className="description">
+                    <h3>{title}</h3>
+                    <p>{description}</p>
+                    <p>{error}</p>
+               </div>
           </div>
      )
 }
