@@ -1,24 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { axiosWithAuth } from '../utils/axioswithAuth'
 
-const History = (props) => {
-const [description, setDescription] = useState("")
-const [title, setTitle] = useState("")
+const History = ({title, description}) => {
+
 
 
 useEffect(() => {
 
 })
 
-useEffect(() => {
-     axiosWithAuth()
-     .get(`https://pathwaystodestiny.herokuapp.com/api/adv/init`)
-          .then(res => {
-               console.log(res.data, "WORLDWORLD")
-               setDescription(res.data.description)
-               setTitle(res.data.title)
-          })
-},[])
+
 
      return(
           <div className="history-container">
