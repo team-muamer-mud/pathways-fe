@@ -9,9 +9,9 @@ import Chat from './chat'
 
 const Controls = styled.div`
 border: 1px solid blue;
-width:20%;
+width:50%;
 justify-content:center;
-height: 70vh; 
+height: 10vh; 
 background-color:white;
 display:flex;
 flex-direction: column;
@@ -25,7 +25,6 @@ display:flex;
 height: 70vh; 
 width:100%;
 background-color: #90EE90;
-flex-wrap:wrap;
 `
 const StyledImg = styled.img`
   width: 25px;
@@ -38,6 +37,7 @@ const StyledImg = styled.img`
 const Game = props => {
     return(
         <Container>
+            <Chat/>
             <Controls>
                 <h2 >Game Controls</h2>
                 <StyledImg src={North} alt="North"></StyledImg>
@@ -49,7 +49,6 @@ const Game = props => {
                 <StyledImg src={East} alt="East"></StyledImg>
                 <p><button>East</button></p>
             </Controls>
-            <Chat/>
         </Container>
     )
 }

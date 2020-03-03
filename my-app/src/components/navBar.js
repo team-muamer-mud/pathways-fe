@@ -18,7 +18,7 @@ const NavLeft = styled.div`
 `;
 
 const NavTitle = styled.h3`
-    padding-left: 1em;
+    padding: .2em;
     font-weight: bold;
     font-size: 2rem;
     background: #D2691E;
@@ -27,15 +27,6 @@ const NavTitle = styled.h3`
 
 `;
 
-const NavRight = styled.div`
-    display: flex;
-    align-items: center;
-`;
-
-
-const StyledLink = styled(Link)`
-    padding-right: 12px;
-`;
 
 const Nav = () => {
     return (
@@ -43,11 +34,6 @@ const Nav = () => {
            <NavLeft>
                <NavTitle>Pathways to Destiny</NavTitle>
            </NavLeft>
-           <NavRight>
-               <StyledLink to="/register">Sign Up</StyledLink>
-               <StyledLink to="/login">Login</StyledLink>
-
-           </NavRight>
        </NavBar>
     );
 }
