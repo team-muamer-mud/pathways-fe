@@ -7,49 +7,49 @@ import South from '../assets/South.png'
 import East from '../assets/east.png'
 import Chat from './chat'
 
-const Controls = styled.div`
-border: 1px solid blue;
-width:50%;
-justify-content:center;
-height: 10vh; 
-background-color:white;
-display:flex;
-flex-direction: column;
-flex-wrap:wrap;
-align-items: center;
-`;
+// const Controls = styled.div`
+// border: 1px solid blue;
+// width:50%;
+// justify-content:center;
+// height: 10vh; 
+// background-color:white;
+// display:flex;
+// flex-direction: column;
+// flex-wrap:wrap;
+// align-items: center;
+// `;
 
-const Container = styled.div`
-border: 1px solid red;
-display:flex;
-height: 70vh; 
-width:100%;
-background-color: #90EE90;
-`
-const StyledImg = styled.img`
-  width: 25px;
-  height: 25px;
-  background-color:white;
-  flex-wrap:wrap;
+// const Container = styled.div`
+// border: 1px solid red;
+// display:flex;
+// height: 70vh; 
+// width:100%;
+// background-color: #9ED08F;
+// `
+// const StyledImg = styled.img`
+//   width: 25px;
+//   height: 25px;
+//   background-color:white;
+//   flex-wrap:wrap;
   
-`;
+// `;
 
 const Game = props => {
     return(
-        <Container>
-            <Chat/>
-            <Controls>
-                <h2 >Game Controls</h2>
-                <StyledImg src={North} alt="North"></StyledImg>
-                <p><button>North</button></p>
-                <StyledImg src={West} alt="West"></StyledImg>
-                <p><button>West</button></p>
-                <StyledImg src={South} alt="South"></StyledImg>
-                <p><button>South</button></p>
-                <StyledImg src={East} alt="East"></StyledImg>
-                <p><button>East</button></p>
-            </Controls>
-        </Container>
+            <div className="game-container">
+                <p className="game-subtitle">Controls</p>
+                    <div className="game-button-container">
+                {/* <Chat/> */}
+                    {/* <img className="game-buttons" src={North} alt="North" /> */}
+                    <p><button className="game-button north">⇧</button></p>
+                    {/* <img className="game-buttons" src={West} alt="West" /> */}
+                    <p><button className="game-button west">⇩</button></p>
+                    {/* <img className="game-buttons" src={South} alt="South" /> */}
+                    <p><button className="game-button south">⇦</button></p>
+                    {/* <img className="game-buttons" src={East} alt="East" /> */}
+                    <p><button className="game-button east">⇨</button></p>
+                </div>
+            </div>
     )
 }
 
