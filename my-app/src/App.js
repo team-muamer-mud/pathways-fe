@@ -12,11 +12,11 @@ function App() {
         <Nav/>
       </div>
       <div className="upper-half-container">
-        <div className="game-visual-container">This is the game</div>
+        <div className="game-visual-container"></div>
         <History />
       </div>
       <div className="lower-half-container">
-        <div className="inventory-container">This is the inventory</div>
+        <div className="inventory-container"><p className="game-subtitle inventory-title">Inventory</p></div>
         <Controls />
       </div>
     </div>

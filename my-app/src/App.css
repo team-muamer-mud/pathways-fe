@@ -3,6 +3,7 @@ html{
 }
 body{
 	box-sizing:border-box;
+	background-color:#f9f7ea;
 }
 .App {
   max-width:1000px;
@@ -20,13 +21,13 @@ body{
 }
 .upper-half-container{
 	margin-top:30px;
-	border:1px solid black;
+	/* border:1px solid black; */
 	display:flex;
 	justify-content:space-between;
 	height:400px;
 }
 .lower-half-container{
-	border:1px solid black;
+	/* border:1px solid black; */
 	margin-top:30px;
 	display:flex;
 	justify-content:space-between;
@@ -81,6 +82,9 @@ button:hover {
 	border-radius:30px;
 	margin-bottom:0;
 }
+.inventory-title{
+	width:30%;
+}
 .nav-container{
 	/* border:1px solid blue; */
 	padding:0;
@@ -101,6 +105,7 @@ button:hover {
 	width:65%;
 	border-radius:10px;
 	border:1px solid #E0E0E0;
+	
 }
 .game-container{
 	background-color:#F6F2E6;
@@ -119,26 +124,47 @@ button:hover {
 	width:100%;
 	padding-left:13px;
 	padding-right:13px;
-	justify-content:space-between;
+	justify-content:space-around;
 }
 .inventory-container{
 	background-color:#F6F2E6;
 	width:65%;
 	border-radius:10px;
 	border:1px solid #E0E0E0;
+	display:flex;
+	align-items:center;
+	flex-direction:column;
 }
 .history-container{
 	background-color:#F6F2E6;
 	width:32%;
 	border-radius:10px;
 	border:1px solid #E0E0E0;
+	display:flex;
+	align-items:center;
+	flex-direction:column;
 }
 .game-button{
-	padding:15px 18px;
+	padding:12px 15px;
 	border:none;
 	text-align:center;
 	border-radius:50%;
 	font-size:1.5rem;
+	border: 1px solid #ccc;
+}
+.game-button:hover{
+	cursor:pointer;
+	filter:brightness(99%);
+}
+.game-button:active{
+	filter:Brightness(95%);
+}
+.game-button:focus{
+	outline:0;
+	 outline: none;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
 }
 .north{
 	background-color:#83E0B9;
