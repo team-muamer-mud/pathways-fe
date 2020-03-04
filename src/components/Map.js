@@ -14,9 +14,8 @@ function Map({world, currentRoom}){
      useEffect( _ => {
           const roomIds = [currentRoom.n_to,currentRoom.e_to,currentRoom.s_to,currentRoom.w_to]
           const newPaths = []
-          if (currentRoom.x) {
+          if (currentRoom.x !== undefined) {
                newPaths.push({x: currentRoom.x, y: currentRoom.y})
-          
                roomIds.map(id => {
                     if (id) {
                          const roomObj = world.find(room => room.id === id)
