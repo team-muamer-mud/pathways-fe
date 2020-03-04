@@ -11,8 +11,6 @@ import {
 
 function Map({world, currentRoom}){
      const [paths, setPaths] = useState([])
-
-
      useEffect( _ => {
           const roomIds = [currentRoom.n_to,currentRoom.e_to,currentRoom.s_to,currentRoom.w_to]
           const newPaths = []
@@ -27,7 +25,6 @@ function Map({world, currentRoom}){
                     }
                })
                setPaths([...paths, ...newPaths])
-               console.log(paths)
           }
      },[currentRoom])
 
@@ -37,30 +34,26 @@ function Map({world, currentRoom}){
           { x: 10, y: -1 },
           { x: -1, y: -1 },
         ];
-     console.log(world)
-     console.log(currentRoom)
 
      // className = {item.id === currentRoom.id ? "active" : ""}
      return (
           <div className="game-visual-container">
                <XYPlot height={600} width={600}>
                     <LineMarkSeries 
-                         lineStyle={{ stroke: 'black', strokeWidth: '3px' }}
+                         lineStyle={{ stroke: '#69aa63', strokeWidth: '3px' }}
+                         markStyle={{stroke: "#3c692e"}}
                          data={paths} 
                     />
-
                     <MarkSeries
                          strokeWidth={18}
                          data={[{ x: currentRoom.x, y: currentRoom.y}]}
-                         color="orange"
+                         color="#e4582e"
                     />
-
                     <MarkSeries
                          className="corners"
                          strokeWidth={0.5}
                          data={corners}
                     />
-
                </XYPlot>
           </div>)
 }
