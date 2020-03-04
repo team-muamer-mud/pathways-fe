@@ -205,3 +205,9 @@ button:hover {
 .east{
 	background-color:#BC81EF;
 }
+.active{
+	color:blue;
+}
+.inactive{
+	color:black;
+}
