@@ -49,7 +49,7 @@ const Login = props => {
             
             <div>
                 <p>
-                    Need to create an account? <Link to='/Register'>Register Here!</Link>
+                    Need to create an account? <Link to='/'>Register Here!</Link>
                 </p>
             </div>
         </div>
