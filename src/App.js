@@ -19,7 +19,7 @@ function App() {
         // console.log(res.data, "WORLDWORLD")
         setWorld(res.data.world)
         console.log(res.data)
-        setCurrentRoom({ title: res.data.title, description: res.data.description, id: res.data.id, x:res.data.x, y:res.data.y})
+        setCurrentRoom({ title: res.data.title, description: res.data.description, id: res.data.id, x:res.data.x, y:res.data.y, n_to: res.data.n_to, s_to: res.data.s_to, e_to: res.data.e_to, w_to: res.data.w_to})
       })
   }, [])
 
