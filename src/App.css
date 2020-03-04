@@ -129,7 +129,7 @@ button:hover {
 }
 .game-visual-container{
 	background-color:#F6F2E6;
-	width:65%;
+	width:630px;
 	border-radius:10px;
 	border:1px solid #E0E0E0;
 	
@@ -155,7 +155,7 @@ button:hover {
 }
 .inventory-container{
 	background-color:#F6F2E6;
-	width:65%;
+	width:630px;
 	border-radius:10px;
 	border:1px solid #E0E0E0;
 	display:flex;
