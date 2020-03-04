@@ -6,15 +6,16 @@ import {axiosWithAuth} from "../utils/axioswithAuth.js";
 export default function RegistrationForm(props) {
     const [userCredentials, setCredentials] = useState({
         username: "",
-        password: "",
+        password1: "",
+        password2: ""
     });
     const onSubmit = event => {
         event.preventDefault();
         axiosWithAuth()
-            .post("", userCredentials)
+            .post("https://pathwaystodestiny.herokuapp.com/api/registration/", userCredentials)
             .then(res => {
                 console.log(res);
-                props.history.push("/");
+                props.history.push("/game");
             })
             .catch(err => console.log(err.response))
     }
@@ -28,16 +29,21 @@ export default function RegistrationForm(props) {
             <form className='form' onSubmit={onSubmit}>
 
                 <label className='label'>Username: 
-                <input className='input' type='text' name='username' placeholder='Username' onChange={changeHandler} value={userCredentials.username} required />
+                    <input className='input' type='text' name='username' placeholder='Username' onChange={changeHandler} value={userCredentials.username} required />
                 </label>
 
                 <label className='label'>Password:
-                <input className='input' type='password' name='password' placeholder='Password' onChange={changeHandler} value={userCredentials.password} required />
+                    <input className='input' type='password' name='password1' placeholder='Password' onChange={changeHandler} value={userCredentials.password1} required />
+                </label>
+
+                <label className='label'>Confirm Password:
+                    <input className='input' type='password' name='password2' placeholder='Password' onChange={changeHandler} value={userCredentials.password2} required />
                 </label>
 
                 <div>
-                <button className='button' type='submit'>Sign Up!</button>
+                    <button className='button' type='submit'>Sign Up!</button>
                 </div>
+                
                 <Link to='/login'><p className='loginhere'>Already Registered? Login here</p></Link>
             </form>
         </div>
