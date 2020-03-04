@@ -12,7 +12,7 @@ export default function RegistrationForm(props) {
     const onSubmit = event => {
         event.preventDefault();
         axios
-            .post("https://pathwaystodestiny.herokuapp.com/api/register/", userCredentials)
+            .post("https://pathwaystodestiny.herokuapp.com/api/registration/", userCredentials)
             .then(res => {
                 console.log(res);
                 props.history.push("/game");
