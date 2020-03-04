@@ -8,7 +8,6 @@ import PrivateRoute from './components/PrivateRoute';
 import Game from './components/game'
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(localStorage.getItem("token") ? true : false)
 
 //   useEffect(() => {
 //     axiosWithAuth()
@@ -24,16 +23,13 @@ function App() {
 
   return (
     <div className="App">
-      { !loggedIn ? 
       <div>
         <Route exact path="/" component={RegistrationForm} />
         <Route path="/Login" component={Login} />
       </div>
-      :
       <div>
-        <PrivateRoute path="/" component={Game} />
+        <PrivateRoute path="/game" component={Game} />
       </div>
-    }
     </div>
   );
 }
