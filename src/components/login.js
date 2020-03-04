@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { axiosWithAuth } from '../utils/axioswithAuth';
 import { Link } from 'react-router-dom';
 
 const Login = props => {
