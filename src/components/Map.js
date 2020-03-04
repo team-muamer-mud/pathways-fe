@@ -37,17 +37,19 @@ function Map({world, currentRoom}){
      // className = {item.id === currentRoom.id ? "active" : ""}
      return (
           <div className="game-visual-container">
-               <XYPlot height={600} width={600}>
+               <XYPlot height={427} width={600}>
                     <LineMarkSeries 
                          lineStyle={{ stroke: '#69aa63', strokeWidth: '3px' }}
                          markStyle={{stroke: "#3c692e"}}
                          data={paths} 
                     />
-                    <MarkSeries
-                         strokeWidth={18}
-                         data={[{ x: currentRoom.x, y: currentRoom.y}]}
-                         color="#e4582e"
-                    />
+                    {currentRoom.x != undefined? 
+                         <MarkSeries
+                              strokeWidth={18}
+                              data={[{ x: currentRoom.x, y: currentRoom.y}]}
+                              color="#e4582e"
+                         />
+                    : null}
                     <MarkSeries
                          className="corners"
                          strokeWidth={0.5}
