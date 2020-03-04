@@ -5,10 +5,23 @@ import Nav from "./components/navBar.js";
 import Controls  from "./components/controls"
 import History from './components/History'
 import {axiosWithAuth} from "./utils/axioswithAuth"
+import Map from './components/Map'
+
 function App() {
-  const [description, setDescription] = useState("")
-  const [title, setTitle] = useState("")
   const [error, setError] = useState("")
+  const [currentRoom, setCurrentRoom] = useState({title:'', description:''})
+  const [world, setWorld] = useState([])
+
+  useEffect(() => {
+    axiosWithAuth()
+      .get(`https://pathwaystodestiny.herokuapp.com/api/adv/init`)
+      .then(res => {
+        // console.log(res.data, "WORLDWORLD")
+        setWorld(res.data.world)
+        console.log(res.data)
+        setCurrentRoom({ title: res.data.title, description: res.data.description, id: res.data.id, x:res.data.x, y:res.data.y})
+      })
+  }, [])
 
   const update = (move) => {
   
@@ -17,17 +30,9 @@ function App() {
             .then(res => {
               if (res.data.error_msg !== "" || res.data.error_msg !== undefined){
                 setError(res.data.error_msg)
+                setCurrentRoom(res.data)
               }
                 console.log(res, "RES");
-                axiosWithAuth()
-                .get(`https://pathwaystodestiny.herokuapp.com/api/adv/init`)
-                     .then(res => {
-                          console.log(res.data, "WORLDWORLD")
-                          setDescription(res.data.description)
-                          setTitle(res.data.title)
-                          // setError(res.data.error_msg)
-                          console.log(res.data.error_msg, "ERROR")
-                     })
             })
             .catch(err => 
                 console.log(err.response))
@@ -52,10 +57,12 @@ function App() {
         <Nav/>
       </div>
       <div className="upper-half-container">
-        <div className="game-visual-container"></div>
+        <Map
+        currentRoom={currentRoom} 
+        world={world}/>
         <History 
-        title={title}
-        description={description}
+        title={currentRoom.title}
+        description={currentRoom.description}
         error={error}/>
       </div>
       <div className="lower-half-container">
