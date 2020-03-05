@@ -14,8 +14,9 @@ const Login = props => {
         axios
         .post("https://pathwaystodestiny.herokuapp.com/api/login/", userCredentials)
         .then(res => {
-            // props.history.push('/')
-            console.log(res)
+            localStorage.setItem("token", res.data.key)
+            props.history.push('/game')
+         
         })
         .catch(err => {
             console.log("Error eggboy", err)

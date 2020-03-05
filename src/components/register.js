@@ -15,8 +15,8 @@ export default function RegistrationForm(props) {
         axios
             .post("https://pathwaystodestiny.herokuapp.com/api/registration/", userCredentials)
             .then(res => {
-                console.log(res);
-                props.history.push("/game");
+                localStorage.setItem("token", res.data.key)
+                props.history.push('/game')
             })
             .catch(err => console.log(err.response))
     }

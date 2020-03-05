@@ -45,9 +45,11 @@ function Map({world, currentRoom}){
                     />
                     {currentRoom.x != undefined? 
                          <MarkSeries
+                              className="player-marker"
                               strokeWidth={18}
                               data={[{ x: currentRoom.x, y: currentRoom.y}]}
                               color="#e4582e"
+                              markStyle={{backgroundImage: "url(veryfunny.png)"}}
                          />
                     : null}
                     <MarkSeries

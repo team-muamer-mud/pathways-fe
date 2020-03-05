@@ -5,13 +5,21 @@ import Controls  from "../components/controls"
 import History from '../components/History'
 import Map from '../components/Map'
 import {axiosWithAuth} from "../utils/axioswithAuth"
+import UserContext from "../contexts/UserContext";
 
-
-function Game() {
+function Game(props) {
 
     const [error, setError] = useState("")
     const [currentRoom, setCurrentRoom] = useState({title:'', description:'', players: []})
     const [world, setWorld] = useState([])
+    const {setLoggedIn} = React.useContext(UserContext)
+
+    const logout = _ => {
+        localStorage.clear();
+        setLoggedIn(false)
+        props.history.push("/")
+
+    }
 
     useEffect(() => {
         axiosWithAuth()
@@ -60,6 +68,7 @@ return(
           <Controls 
           update = {update}/>
         </div>
+        <button onClick={logout}>Log Out</button>
     </div>
 );}
 
