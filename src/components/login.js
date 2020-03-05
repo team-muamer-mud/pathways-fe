@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import UserContext from "../contexts/UserContext"
 
 const Login = props => {
 
@@ -8,6 +9,7 @@ const Login = props => {
         username: "",
         password: "",
     });
+    const {setLoggedIn} = React.useContext(UserContext);
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -16,6 +18,7 @@ const Login = props => {
         .then(res => {
             localStorage.setItem("token", res.data.key)
             props.history.push('/game')
+            setLoggedIn(true);
          
         })
         .catch(err => {

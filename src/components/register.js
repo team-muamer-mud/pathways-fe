@@ -2,9 +2,11 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import {axiosWithAuth} from "../utils/axioswithAuth.js";
+import UserContext from "../contexts/UserContext";
 
 
 export default function RegistrationForm(props) {
+    const {setLoggedIn} = React.useContext(UserContext);
     const [userCredentials, setCredentials] = useState({
         username: "",
         password1: "",
@@ -16,6 +18,7 @@ export default function RegistrationForm(props) {
             .post("https://pathwaystodestiny.herokuapp.com/api/registration/", userCredentials)
             .then(res => {
                 localStorage.setItem("token", res.data.key)
+                setLoggedIn(true)
                 props.history.push('/game')
             })
             .catch(err => console.log(err.response))
