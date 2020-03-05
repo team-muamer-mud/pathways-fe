@@ -10,8 +10,8 @@ import UserContext from "./contexts/UserContext";
 
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(localStorage.getItem("token" ? true : false))
-
+  const [loggedIn, setLoggedIn] = useState(localStorage.getItem("token") ? true : false )
+  
   return (
     <UserContext.Provider value={{loggedIn, setLoggedIn}}>
       <div className="App">
