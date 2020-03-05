@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {axiosWithAuth} from "../utils/axioswithAuth.js";
 
 export default function RegistrationForm(props) {
@@ -24,28 +24,30 @@ export default function RegistrationForm(props) {
     }
 
     return (
-        <div className='container'>
-            <h2 className='title'>Registration</h2>
-            <form className='form' onSubmit={onSubmit}>
+        <div className='register-container'>
+            <h2 className='reg-title'>Registration</h2>
+            <form className='reg-form' onSubmit={onSubmit}>
 
-                <label className='label'>Username: 
-                    <input className='input' type='text' name='username' placeholder='Username' onChange={changeHandler} value={userCredentials.username} required />
+                <label className='reg-label'>
+                    <input className='reg-input' type='text' name='username' placeholder='Username' onChange={changeHandler} value={userCredentials.username} required />
                 </label>
 
-                <label className='label'>Password:
-                    <input className='input' type='password' name='password1' placeholder='Password' onChange={changeHandler} value={userCredentials.password1} required />
+                <label className='reg-label'>
+                    <input className='reg-input' type='password' name='password1' placeholder='Password' onChange={changeHandler} value={userCredentials.password1} required />
                 </label>
 
-                <label className='label'>Confirm Password:
-                    <input className='input' type='password' name='password2' placeholder='Password' onChange={changeHandler} value={userCredentials.password2} required />
+                <label className='reg-label'>
+                    <input className='reg-input' type='password' name='password2' placeholder='Confirm Password' onChange={changeHandler} value={userCredentials.password2} required />
                 </label>
 
                 <div>
-                    <button className='button' type='submit'>Sign Up!</button>
+                    <button className='reg-button' type='submit'>Sign Up!</button>
                 </div>
-                
-                <Link to='/login'><p className='loginhere'>Already Registered? Login here</p></Link>
             </form>
+
+                {/* <Link to='/login'><p className='reg-login-here'>Already Registered? Login here</p></Link> */}
+                Already Registered? <Link to='/login' className="reg-login-here">Log in Here!</Link>
+            
         </div>
     );
 };
