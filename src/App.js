@@ -1,36 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import {axiosWithAuth} from "./utils/axioswithAuth"
 import RegistrationForm from './components/register'
 import Login from './components/login'
 import PrivateRoute from './components/PrivateRoute';
 import Game from './components/game'
+import UserContext from "./contexts/UserContext";
+
 
 function App() {
-
-//   useEffect(() => {
-//     axiosWithAuth()
-//     .get(`https://pathwaystodestiny.herokuapp.com/api/adv/init`)
-//          .then(res => {
-//               console.log(res.data, "WORLDWORLD")
-//               setDescription(res.data.description)
-//               setTitle(res.data.title)
-//          })
-// },[])
-
-
+  const [loggedIn, setLoggedIn] = useState(localStorage.getItem("token" ? true : false))
 
   return (
-    <div className="App">
-      <div>
-        <Route exact path="/" component={RegistrationForm} />
-        <Route path="/Login" component={Login} />
+    <UserContext.Provider value={{loggedIn, setLoggedIn}}>
+      <div className="App">
+        {loggedIn ? <Redirect to="/game" /> : null}
+        <div>
+          <Route exact path="/" component={RegistrationForm} />
+          <Route path="/Login" component={Login} />
+        </div>
+
+        <div>
+          <PrivateRoute path="/game" component={Game} />
+        </div>
       </div>
-      <div>
-        <PrivateRoute path="/game" component={Game} />
-      </div>
-    </div>
+    </UserContext.Provider>
   );
 }
 
