@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import {axiosWithAuth} from "../utils/axioswithAuth.js";
 
+
 export default function RegistrationForm(props) {
     const [userCredentials, setCredentials] = useState({
         username: "",
@@ -11,7 +12,7 @@ export default function RegistrationForm(props) {
     });
     const onSubmit = event => {
         event.preventDefault();
-        axiosWithAuth()
+        axios
             .post("https://pathwaystodestiny.herokuapp.com/api/registration/", userCredentials)
             .then(res => {
                 console.log(res);

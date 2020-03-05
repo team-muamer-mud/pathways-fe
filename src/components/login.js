@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { axiosWithAuth } from '../utils/axioswithAuth';
 import { Link } from 'react-router-dom';
 
 const Login = props => {
@@ -47,9 +46,11 @@ const Login = props => {
 
             </form>
 
+
             Need to create an Account? <Link to='/' className="login-reg-here">Register Here!</Link>
 
             {/* <Link to='/'><p className='login-reg-here'>Need to create an account? </p></Link> */}
+
         </div>
     )
 }
