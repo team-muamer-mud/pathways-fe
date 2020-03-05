@@ -212,3 +212,135 @@ button:hover {
 .inactive{
 	color:black;
 }
+
+/* Register Styling */
+
+.register-container{
+	text-align: center;
+	height: 50vh;
+}
+
+.reg-title{
+	font-size: 35px;
+	padding-bottom: 1%;
+}
+
+.reg-form{
+	display: flex;
+	flex-direction: column;
+}
+
+.reg-input{
+	font-size: 20px;
+	margin: 1%;
+	border: none;
+	padding: 8px 15px;
+}
+
+.reg-login-here {
+	margin-top: 2%;
+	background-color:#F7C83C;
+	border-radius:28px;
+	border: none;
+	display:inline-block;
+	cursor:pointer;
+	color:black;
+	font-family:Arial;
+	font-size:17px;
+	padding:3px 20px;
+	text-decoration:none;
+}
+.reg-login-here:hover {
+	background-color:#5cbf2a;
+}
+.reg-login-here:active {
+	position:relative;
+	top:1px;
+}
+
+.reg-button {
+	background-color:#F7C83C;
+	display:inline-block;
+	cursor:pointer;
+	color:black;
+	font-family:Arial;
+	font-size:18px;
+	padding:8px 30px;
+	text-decoration:none;
+	border: none;
+	margin-top: 0.7%;
+	border-radius: 30px;
+}
+.reg-button:hover {
+	background-color:pink;
+}
+.reg-button:active {
+	position:relative;
+	top:1px;
+}
+
+/* Login Styling */
+
+.login-container{
+	text-align: center;
+	height: 50vh;
+}
+
+.login-title{
+	font-size: 35px;
+	padding-bottom: 1%;
+}
+
+.login-form{
+	display: flex;
+	flex-direction: column;
+}
+
+.login-input{
+	font-size: 20px;
+	margin: 1%;
+	border: none;
+	padding: 8px 15px;
+}
+
+.login-reg-here {
+	margin-top: 2%;
+	background-color:#F7C83C;
+	border-radius:28px;
+	border: none;
+	display:inline-block;
+	cursor:pointer;
+	color:black;
+	font-family:Arial;
+	font-size:17px;
+	padding:3px 20px;
+	text-decoration:none;
+}
+.login-reg-here:hover {
+	background-color:#5cbf2a;
+}
+.login-reg-here:active {
+	position:relative;
+	top:1px;
+}
+
+.login-button {
+	background-color:#F7C83C;
+	display:inline-block;
+	cursor:pointer;
+	color:black;
+	font-family:Arial;
+	font-size:18px;
+	padding:8px 30px;
+	text-decoration:none;
+	border: none;
+	margin-top: 0.7%;
+	border-radius: 30px;
+}
+.login-button:hover {
+	background-color: pink;
+}
+.login-button:active {
+	position:relative;
+	top:1px;
+}

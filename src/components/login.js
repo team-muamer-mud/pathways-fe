@@ -28,30 +28,29 @@ const Login = props => {
 
 
     return (
-        <div>
-            <h3>Log In!</h3>
-            <form onSubmit={handleSubmit}>
+        <div className='login-container'>
+            <h3 className='login-title'>Log In!</h3>
+            <form className='login-form' onSubmit={handleSubmit}>
 
-                <label className='label'>Username: 
-                    <input className='input' type='text' name='username' placeholder='Username' onChange={changeHandler} value={userCredentials.username} required />
+                <label className='login-label'> 
+                    <input className='login-input' type='text' name='username' placeholder='Username' onChange={changeHandler} value={userCredentials.username} required />
                 </label>
 
-                <label className='label'>Password:
-                    <input className='input' type='password' name='password' placeholder='Password' onChange={changeHandler} value={userCredentials.password} required />
+                <label className='login-label'>
+                    <input className='login-input' type='password' name='password' placeholder='Password' onChange={changeHandler} value={userCredentials.password} required />
                 </label>
 
                 <div>
-                    <button className='button' type='submit'>Log in!</button>
+                    <button className='login-button' type='submit'>Log in!</button>
                 </div>
 
             </form>
 
-            
-            <div>
-                <p>
-                    Need to create an account? <Link to='/'>Register Here!</Link>
-                </p>
-            </div>
+
+            Need to create an Account? <Link to='/' className="login-reg-here">Register Here!</Link>
+
+            {/* <Link to='/'><p className='login-reg-here'>Need to create an account? </p></Link> */}
+
         </div>
     )
 }
