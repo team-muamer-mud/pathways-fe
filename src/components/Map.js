@@ -49,7 +49,7 @@ function Map({world, currentRoom}){
                               strokeWidth={18}
                               data={[{ x: currentRoom.x, y: currentRoom.y}]}
                               color="#e4582e"
-                              markStyle={{backgroundImage: "url(veryfunny.png)"}}
+                              markStyle={{stroke: "blue"}}
                          />
                     : null}
                     <MarkSeries
