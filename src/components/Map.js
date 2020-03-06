@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import "react-vis/dist/style.css"
+import thatsfunny from "./veryfunny.png"
 
 import {
      XYPlot,
@@ -46,12 +47,15 @@ function Map({world, currentRoom}){
                     {currentRoom.x != undefined? 
                          <MarkSeries
                               className="player-marker"
-                              strokeWidth={18}
+                              strokeWidth={14}
                               data={[{ x: currentRoom.x, y: currentRoom.y}]}
                               color="#e4582e"
-                              markStyle={{stroke: "blue"}}
+                              markStyle={{backgroundImage: "url(veryfunny.png)"}}
                          />
                     : null}
+                    
+                    <img src={thatsfunny} style={{position: "absolute", height: "50px", width: "50px", left: `${currentRoom.x * 50 + 65}px`, bottom: `${currentRoom.y * 34 +50}px` }} />
+
                     <MarkSeries
                          className="corners"
                          strokeWidth={0.5}
