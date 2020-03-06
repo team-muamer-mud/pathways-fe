@@ -45,17 +45,16 @@ function Map({world, currentRoom}){
                          data={paths} 
                     />
                     {currentRoom.x != undefined? 
-                         <MarkSeries
-                              className="player-marker"
-                              strokeWidth={14}
-                              data={[{ x: currentRoom.x, y: currentRoom.y}]}
-                              color="#e4582e"
-                              markStyle={{backgroundImage: "url(veryfunny.png)"}}
-                         />
+                         // <MarkSeries
+                         //      className="player-marker"
+                         //      strokeWidth={14}
+                         //      data={[{ x: currentRoom.x, y: currentRoom.y}]}
+                         //      color="#e4582e"
+                         //      markStyle={{backgroundImage: "url(veryfunny.png)"}}
+                         // />
+                         <img src={thatsfunny} style={{position: "absolute", height: "50px", width: "50px", left: `${currentRoom.x * 50 + 65}px`, bottom: `${currentRoom.y * 34 +50}px` }} />
                     : null}
-                    
-                    <img src={thatsfunny} style={{position: "absolute", height: "50px", width: "50px", left: `${currentRoom.x * 50 + 65}px`, bottom: `${currentRoom.y * 34 +50}px` }} />
-
+     
                     <MarkSeries
                          className="corners"
                          strokeWidth={0.5}
